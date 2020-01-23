@@ -5,7 +5,7 @@
 Git Commands
 
 ### Description
-Learning how to use git commands
+Forking a repository and using git commands to test.
 
 ### Files used
 Include the files used
