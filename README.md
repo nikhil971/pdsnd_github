@@ -1,5 +1,5 @@
 ### Date created
-22nd January 2020
+22/01/2020
 
 ### Project Title
 Git Commands
