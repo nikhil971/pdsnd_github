@@ -19,7 +19,6 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs   
     
     while True:
         city = input('enter any one city in chicago, new york city and washington')
@@ -55,8 +54,6 @@ def get_filters():
         else:
             print('entered day is',day)
             break
-    # TO DO: get user input for month (all, january, february, ... , june)
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     print('-'*40)
     return city, month.capitalize(), day.capitalize()
 
@@ -95,15 +92,12 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    # TO DO: display the most common month
     a = df['month'].value_counts().head(1).index
     for i in a:
         print('The most common month is \n',calendar.month_name[i],'\n')
-    # TO DO: display the most common day of week
     b=df['day_of_week'].value_counts().head(1).index
     for i in b:
         print('The most common day of week is \n',i,'\n')    
-    # TO DO: display the most common start hour
     print('The most common start hour is \n',df['Start Time'].dt.hour.head(1),'\n')
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -115,11 +109,8 @@ def station_stats(df):
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-    # TO DO: display most commonly used start station
     print('The most commonly used start station\n',df['Start Station'].value_counts().head(1),'\n')
-    # TO DO: display most commonly used end station
     print('The most commonly used end station\n',df['End Station'].value_counts().head(1),'\n')
-    # TO DO: display most frequent combination of start station and end station trip
     A=pd.Series(zip(df['Start Station'],df['End Station']))
     print('The most popular trip is \n',A.value_counts().head(1),'\n')
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -130,9 +121,7 @@ def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
-    # TO DO: display total travel time
     print('The total travel time is\n',df['Trip Duration'].sum(),'\n')    
-    # TO DO: display mean travel time
     print('The mean travel time is\n',df['Trip Duration'].mean(),'\n')
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -144,17 +133,14 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # TO DO: Display counts of user types
     print('The count of the user types are \n',df['User Type'].value_counts(),'\n')
     
     try:
-        # TO DO: Display counts of gender
         print('The counts of genders are\n',df['Gender'].value_counts(),'\n')
     except KeyError:
         print('There  isnt a column called Gender in this city data so exception occured')
 
 
-    # TO DO: Display earliest, most recent, and most common year of birth
     try:
         print('The earliest year of birth\n',df['Birth Year'].min(),'\n')
         print('The most recent year of birth\n',df['Birth Year'].max(),'\n')
