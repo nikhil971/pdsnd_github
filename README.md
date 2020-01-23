@@ -5,7 +5,7 @@
 Git Commands
 
 ### Description
-Describe what your project is about and what it does
+Learning how to use git commands
 
 ### Files used
 Include the files used
